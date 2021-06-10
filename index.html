@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>石牌冰菓</title>
+<meta property="og:title" content="炎炎夏日~石牌冰菓">
+<meta property="og:image" content="images/icon.png">
+<link rel="icon" href="images/icon.png">
+<style type="text/css">
+body {
+	font-family: Arial, "微軟正黑體";
+}
+.boxall {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: inline-block;
+}
+.inbox {
+	display: block;
+	width: 80px;
+	height: 80px;
+	background-color: #009edd;
+	text-align: center;
+	line-height: 80px;
+}
+.inbox::before {
+	content: "Welcome";
+	color: #fff;
+}
+.out {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	animation: out_anima 1s infinite;
+}
+ @keyframes out_anima {
+ 15% {
+transform: scale(1.6)
+}
+ 50% {
+transform: rotate(50deg)
+}
+ 100% {
+transform: rotate(90deg)
+}
+}
+.out_top::before, .out_top::after, .out_bottom::before, .out_bottom::after {
+	content: "";
+	color: #009edd;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+}
+.out_top::before {
+	top: -6px;
+	left: -6px;
+	border-top: 1px solid;
+	border-left: 1px solid;
+}
+.out_top::after {
+	top: -6px;
+	right: -6px;
+	border-top: 1px solid;
+	border-right: 1px solid;
+}
+.out_bottom::before {
+	bottom: -6px;
+	left: -6px;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+}
+.out_bottom::after {
+	bottom: -6px;
+	right: -6px;
+	border-bottom: 1px solid;
+	border-right: 1px solid;
+}
+#out2 {
+	animation-delay: 0.5s;
+}
+#mycount {
+	position: absolute;
+	top: 150px;
+	left: -160px;
+	width: 400px;
+	text-align: center;
+	color: #009edd;
+	font-size: 48px;
+}
+.bg {
+	position: absolute;
+	writing-mode: vertical-rl;
+	color: #fff;
+	animation: bg_anima 13s linear infinite;
+}
+ @keyframes bg_anima {
+ 0% {
+filter: blur(3px)
+}
+ 50% {
+transform: scale(4);
+ color: #000;
+ filter: blur(0px)
+}
+ 100% {
+transform: scale(5);
+ color: #fff;
+ filter: blur(15px)
+}
+}
+#bg1 {
+	top: 10%;
+	left: 10%;
+	animation-delay: 0.5s;
+}
+#bg2 {
+	top: 20%;
+	right: 10%;
+	animation-delay: 1s;
+}
+#bg3 {
+	top: 50%;
+	left: 40%;
+	animation-delay: 2s;
+}
+#bg4 {
+	top: 60%;
+	right: 30%;
+	animation-delay: 3s;
+}
+#bg5 {
+	top:30%;
+	left: 80%;
+	animation-delay: 4s;
+}
+#bg6 {
+	top: 10%;
+	right: 70%;
+	animation-delay: 5s;
+}
+</style>
+</head>
+
+<body>
+<a href="myindex.html">
+<div class="boxall">
+  <div id="mycount">15</div>
+  <div class="inbox"></div>
+  <div class="out">
+    <div class="out_top"></div>
+    <div class="out_bottom"></div>
+  </div>
+</div>
+<div class="boxall">
+  <div class="inbox"></div>
+  <div class="out" id="out2">
+    <div class="out_top"></div>
+    <div class="out_bottom"></div>
+  </div>
+</div>
+</a>
+<div class="bg" id="bg1">吃這家吃那家口味差不多？</div>
+<div class="bg" id="bg2">夏天想吃冰卻毫無頭緒？</div>
+<div class="bg" id="bg3">好多品項到底要吃什麼？</div>
+<div class="bg" id="bg4">雪花﹐黑糖﹐紅豆冰</div>
+<div class="bg" id="bg5">炎炎夏日要吃冰！</div>
+<div class="bg" id="bg6">芋圓﹐粉粿﹐杏仁凍</div>
+
+<script>
+	var time=15;
+	var mycount=document.getElementById('mycount');
+	Mycounter();
+	function Mycounter(){
+		if(time<=0){
+			mycount.innerHTML='石牌冰菓';
+		setTimeout(myindex,3000);
+		}
+		else{
+			mycount.innerHTML=time;
+		setTimeout(Mycounter,1000);
+			time--;
+		}
+	}
+		function myindex(){
+			document.location.href='myindex.html';
+		}
+	
+	</script> 
+
+<script>
+console.log(localStorage);
+localStorage.setItem('heart1',70);
+localStorage.setItem('heart2',40);
+localStorage.setItem('heart3',50);
+localStorage.setItem('heart4',60);
+localStorage.setItem('heart5',30);
+localStorage.setItem('heart6',20);
+	
+</script>
+</body>
+</html>
