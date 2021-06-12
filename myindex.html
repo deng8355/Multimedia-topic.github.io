@@ -472,21 +472,34 @@ footer {
               <div id="p6" class="progress-bar" role="progressbar" style="width: 25%;background: linear-gradient(to left,#009edd,#005A7E)" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
-          <div class="col-12"> <span id="funtext" style="position: relative;top:-150px;"></span>
-            <h3 class="text-center">趣味測驗</h3>
+          <div class="col-12"> <span id="funtext" style="position: relative;top:-150px;"></span><br>
+           <h3 class="text-center">網頁滿意度</h3>
             <hr>
-            <lable for="q1">請問以下何者並未在網頁中出現？</lable>
+            <lable for="q1">您的回饋是我們前進的動力!(5星最高)</lable>
             <br>
-            <input type="checkbox" id="a1" value="50">
-            A.芋頭<br>
-            <input type="checkbox" id="a2" value="0">
-            B.芒果<br>
-            <input type="checkbox" id="a3" value="50">
-            C.草莓<br>
-            <input type="checkbox" id="a4" value="0">
-            D.芋圓<br>
-            <br>
-            <button class="btn btn-primary" id="lookans">評分！</button>
+            <p>
+              <label>
+                <input type="radio" id="a1">
+                ❤❤❤❤❤</label>
+              <br>
+              <label>
+                <input type="radio" id="a2">
+                ❤❤❤❤</label>
+              <br>
+              <label>
+                <input type="radio" id="a3">
+                ❤❤❤</label>
+              <br>
+              <label>
+                <input type="radio" id="a4">
+                ❤❤</label>
+              <br>
+              <label>
+                <input type="radio" id="a5">
+                ❤</label>
+              <br>
+            </p>
+            <button class="btn btn-primary" id="lookans">發送！</button>
           </div>
         </div>
       </div>
@@ -768,28 +781,10 @@ function gettime(){
 	
 </script> 
 <script>
-	var a1=document.getElementById('a1');
-	var a2=document.getElementById('a2');
-	var a3=document.getElementById('a3');
-	var a4=document.getElementById('a4');
 	var lookans=document.getElementById('lookans');
-	var grade=0;
 lookans.addEventListener('click',ans);
 	function ans(){
-		var grade=0;
-		if(a1.checked){
-			grade=grade+Number(a1.value);
-		}
-		if(a2.checked){
-			grade=grade+Number(a2.value);
-		}
-		if(a3.checked){
-			grade=grade+Number(a3.value);
-		}
-		if(a4.checked){
-			grade=grade+Number(a4.value);
-		}
-		alert(grade+"分！")
+		alert("發送成功!")
 	}
 	</script> 
 <script src="jQueryAssets/jquery-1.11.1.min.js"></script> 
